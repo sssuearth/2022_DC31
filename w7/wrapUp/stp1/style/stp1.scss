@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* color: white; */
+}
+
+.section {
+  /* background-color: red; */
+}
+.container {
+  /* background-color: green; */
+  $padding-inline-value: 24px;
+  max-width: 1200px + 2 * $padding-inline-value;
+  margin-inline: auto;
+  padding-inline: $padding-inline-value;
+}
+.wrapper {
+  /* background-color: blue; */
+  padding-block: 64px;
+}
+
+.button {
+  width: fit-content;
+  /* 텍스트에 핏하게 버튼 크기맞춤 */
+  background-color: cornflowerblue;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  &--type-text {
+    background-color: unset;
+    color: cornflowerblue;
+    padding-inline: unset;
+  }
+}
+
+.nav {
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-block: 12px;
+  }
+  &__menuWrapper {
+    display: flex;
+    gap: 24px;
+    align-items: baseline;
+  }
+}
+
+.main {
+  &__media {
+    background-color: rgb(255, 199, 246);
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      // cover대신 conntain을 넣으면 사이즈안에 안짤리게 들어감
+    }
+  }
+}
+
+#hero1 {
+  text-align: center;
+  .button {
+    margin-inline: auto;
+  }
+  .main {
+    &__text {
+      margin-inline: auto;
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+    &__media {
+      aspect-ratio: 16 / 9;
+    }
+  }
+  h2 {
+    margin-bottom: 16px;
+  }
+  p {
+    margin-bottom: 24px;
+  }
+}
+
+#hero2 {
+  background-color: rgb(227, 227, 227);
+  .wrapper {
+    display: flex;
+    align-items: center;
+    $gap-val: 24px;
+    gap: $gap-val;
+    & > * {
+      flex: 1;
+      // 위 플렉스랑 아래 값이랑 똑같음
+      // width: calc((100% - $gap-val) / 2);
+    }
+  }
+  .main {
+    &__text {
+      &__buttonWrapper {
+        display: flex;
+        gap: 16px;
+      }
+    }
+    &__media {
+      aspect-ratio: 4 / 3;
+    }
+  }
+  h2 {
+    margin-bottom: 16px;
+  }
+  p {
+    max-width: 40ch;
+    margin-bottom: 24px;
+  }
+}
+
+.footer {
+  background-color: gray;
+  color: white;
+  font-size: 0.875rem;
+  // 아래 ui design~폰트들 크기
+  a {
+    text-decoration: none;
+    // 글짜 및 밑줄 없애는거
+    color: white;
+    // 글짜 색 보라색 없애는거
+  }
+
+  li {
+    list-style: none;
+    // 글머리 동그란거 지우기
+  }
+  svg {
+    fill: white;
+    // 요소들, 앱 아이콘들 모두 하얗게
+  }
+  .wrapper {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   gap: 24px;
+    //   > * {
+    //     flex: 1;
+    //   }
+    // }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  h2 {
+    font-size: 1rem;
+    //use cases~compare 제목 폰트 크기
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  &__logo {
+    margin-bottom: 0.75rem;
+  }
+  &__extLinkWrap {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+}

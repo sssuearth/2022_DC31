@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* *은 모든 css요소를 의미 */
+/* h1태그는 원래 마진값이 있음 */
+
+body {
+  color: white;
+}
+
+.section {
+  background-color: red;
+}
+.container {
+  background-color: green;
+  max-width: 1200px;
+
+  /* margin: 0 auto; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* margin-뒤에 인라인:좌우에 값을 넣어준거임 (left, right 합친거) */
+  margin-inline: auto;
+
+  /* padding-left: 0 24px; */
+  /* padding-left: 24px; */
+  /* padding-right: 24px; */
+  /* 위아래 따로 지정하고 싶지 않음, 좌우 따로쓰기도 불편함 */
+  padding-inline: 24px;
+}
+.wrapper {
+  background-color: blue;
+  /* 글자끼리의 위아래 간격 */
+  /* padding: 24px 0; */
+  /* 위에꺼 : 위아래로 24픽셀, 좌우로는 안준다는값 */
+  /* padding-top: 64px;
+        padding: 64px; */
+  padding-block: 64px;
+  /* 인라인에 대응하는 프로퍼티 꼬리표 : 패딩블록 */
+}

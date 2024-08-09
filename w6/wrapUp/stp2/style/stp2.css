@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* *은 모든 css요소를 의미 */
+/* h1태그는 원래 마진값이 있음 */
+
+body {
+  /* color: white; */
+}
+
+.section {
+  /* background-color: red; */
+}
+.container {
+  /* background-color: green; */
+  --variableName: 24px;
+  max-width: calc(
+    1200px + 2 * var(--variableName)
+  );
+  margin-inline: auto;
+  padding-inline: var(--variableName);
+}
+.wrapper {
+  /* background-color: blue; */
+  /* 글자끼리의 위아래 간격 */
+  /* padding: 24px 0; */
+  /* 위에꺼 : 위아래로 24픽셀, 좌우로는 안준다는값 */
+  /* padding-top: 64px;
+          padding: 64px; */
+  padding-block: 64px;
+  /* 인라인에 대응하는 프로퍼티 꼬리표 : 패딩블록 */
+}
+
+.nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-block: 12px;
+}
+
+.nav__menuWrapper {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.nav {
+  /* background-color: black; */
+  color: white;
+  font-weight: 700;
+}
+
+.nav__menu,
+.nav__logo {
+  /* color: blue; */
+}
+
+.nav .container {
+  background-color: black;
+}
+
+.button {
+  background-color: slateblue;
+  padding: 8px 16px;
+  border-radius: 8px;
+}

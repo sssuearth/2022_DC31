@@ -1,0 +1,72 @@
+// *
+// 모든 html 엘레먼트
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.wrapper {
+  max-width: 70ch;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.site-title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+section {
+  padding-block: 5rem;
+  .section-title {
+    fonr-size: 2.25rem;
+  }
+  //   &:nth-child(odd) {
+  //     background-color: darkgray;
+  //   }
+  &:nth-of-type(odd) {
+    background-color: darkgray;
+  }
+}
+
+// 기울리기
+.diagonal {
+  position: relative;
+  //   background: linear-gradient(
+  //     45deg in oklab,
+  //     oklch(80% 0.5 340) 0%,
+  //     oklch(80% 0.5 200) 100%
+  //   );
+  // 포괄적인 배경 컬러를 쓸때는 그냥 background:
+
+  background-color: darkgray;
+  isolation: isolate;
+  &::after {
+    content: "";
+    position: absolute;
+    // 앱솔루트 : 내위치에 있지 않을거야~, 부모요소중에 포지션이 스테틱이 아닌것을 찾음
+    background: linear-gradient(
+      45deg in oklab,
+      oklch(80% 0.5 340) 0%,
+      oklch(80% 0.5 200) 100%
+    );
+    inset: 0;
+    transform: skewY(-5deg);
+    // 마이클잭슨처럼 찌그러트리기
+    z-index: -1;
+    // 빨간 박스를 뒤로보내기
+  }
+}

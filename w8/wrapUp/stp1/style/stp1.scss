@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* color: white; */
+}
+
+.section {
+  /* background-color: red; */
+}
+.container {
+  // background-color: rgb(55, 55, 55);
+  $padding-inline-value: 24px;
+  max-width: 1200px + 2 * $padding-inline-value;
+  margin-inline: auto;
+
+  padding-inline: $padding-inline-value;
+}
+.wrapper {
+  /* background-color: blue; */
+  padding-block: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+}
+
+// .imlogo {
+//   /*svg 파일이라 비율유지*/
+//   /*width: 200px;*/
+//   height: 100px;
+// }
+
+.button {
+  width: fit-content;
+  /* 텍스트에 핏하게 버튼 크기맞춤 */
+  background-color: rgb(49, 49, 49);
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  &--type-text {
+    background-color: unset;
+    color: cornflowerblue;
+    padding-inline: unset;
+  }
+}
+
+.nav {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-weight: 600;
+  container-type: inline-size;
+  container-name: nav;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-block: 30px;
+    font-weight: 500;
+  }
+
+  &__logo {
+    font-size: 35px;
+    display: flex;
+    font-family: "Bruno Ace", cursive;
+    margin-bottom: 0.75rem;
+    // align-items: baseline;
+  }
+  &__select {
+    color: rgb(81, 168, 255);
+  }
+
+  &__menuWrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+  }
+  .lt680px {
+    display: none;
+  }
+  @container nav (width < 42.5rem) {
+    &__menuWrapper {
+      display: none;
+    }
+    .lt680px {
+      display: unset;
+    }
+  }
+}
+
+.main {
+  &__media {
+    background-color: rgb(210, 210, 210);
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      // cover대신 conntain을 넣으면 사이즈안에 안짤리게 들어감
+    }
+  }
+}
+
+#hero0 {
+  background-color: rgb(28, 28, 28);
+  text-align: center;
+  .main {
+    &__media {
+      aspect-ratio: 16 / 7;
+      margin-bottom: 40px;
+    }
+    &__text {
+      color: aliceblue;
+      margin-inline: auto;
+      // max-width: 1000px;
+      // 사진크기
+      // margin-top: 10px;
+      // margin-bottom: 24px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+  h2 {
+    margin-bottom: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+  }
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+#hero01 {
+  background-color: rgb(227, 227, 227);
+  .wrapper {
+    display: flex;
+    align-items: center;
+    $gap-val: 24px;
+    gap: $gap-val;
+    & > * {
+      flex: 1;
+      // 위 플렉스랑 아래 값이랑 똑같음
+      // width: calc((100% - $gap-val) / 2);
+    }
+  }
+  .main {
+    &__text {
+      &__buttonWrapper {
+        display: flex;
+        gap: 16px;
+      }
+    }
+    &__media {
+      aspect-ratio: 5 / 3;
+    }
+  }
+  h2 {
+    margin-bottom: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+  }
+  p {
+    max-width: 40ch;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+  @media (width < 850px) {
+    .wrapper {
+      display: block;
+      text-align: center;
+      p {
+        margin-inline: auto;
+      }
+    }
+    .main {
+      &__text {
+        margin-bottom: 2.25rem;
+        &__buttonWrapper {
+          margin-inline: auto;
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
+        }
+      }
+    }
+  }
+}
+
+#hero1 {
+  text-align: center;
+  // .button {
+  //   margin-inline: auto;
+  // }
+  .main {
+    &__text {
+      margin-inline: auto;
+      max-width: 600px;
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+    &__media {
+      aspect-ratio: 5 / 2;
+      margin-inline: auto;
+      max-width: 800px;
+      margin-bottom: 10px;
+    }
+  }
+  h2 {
+    margin-bottom: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+  }
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+.footer {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 400;
+  // 아래 ui design~폰트들 크기
+  container-type: inline-size;
+  container-name: footer;
+  a {
+    text-decoration: none;
+    // 글짜 및 밑줄 없애는거
+    color: white;
+    // 글짜 색 보라색 없애는거
+  }
+
+  li {
+    list-style: none;
+    // 글머리 동그란거 지우기
+  }
+  svg {
+    fill: white;
+    // 요소들, 앱 아이콘들 모두 하얗게
+  }
+  .wrapper {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   gap: 24px;
+    //   > * {
+    //     flex: 1;
+    //   }
+    // }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  h2 {
+    font-size: 1rem;
+    //use cases~compare 제목 폰트 크기
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  &__logo {
+    margin-bottom: 0.75rem;
+  }
+  &__extLinkWrap {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  @container footer (width < 44.375rem) {
+    .column:first-of-type {
+      grid-row: 1 / span 2;
+    }
+    .wrapper {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

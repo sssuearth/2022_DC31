@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+// 무효사이즈를 위해
+
+img {
+  display: block;
+}
+// 이미지와 텍스트 사이의 갭 없애기
+
+.container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+// 가운데에 위치하게 해주는 기능
+
+@media (width < 37.5rem) {
+  .container {
+    padding-inline: 1rem;
+  }
+}
+
+.wrapper {
+  padding-block: 2rem;
+}
+
+#section1 {
+  .wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+}
+// 3개 카드 가로 정렬, 공간 주기
+
+.card {
+  max-width: 18.75rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.5rem;
+  background-color: white;
+  overflow: hidden;
+  &__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  &__text {
+    padding: 1rem;
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      //h3밑 마진
+    }
+    p {
+      $lineHeightVal: 1.5rem;
+      $clampLine: 5;
+      // 변수 5줄 - 글 줄 수 변경 가능
+      line-height: $lineHeightVal;
+      overflow: hidden;
+      // 글자가 넘치면 감춰라
+      text-overflow: ellipsis;
+      // 글자가 넘어가면 ... 해주는 기능
+      display: -moz-groupbox;
+      display: -webkit-box;
+      -moz-box-orient: vertical;
+      -webkit-box-orient: vertical;
+      -moz-line-clamp: $clampLine;
+      -webkit-line-clamp: $clampLine;
+      // 5: 5줄 다섯줄
+      max-height: $clampLine * $lineHeightVal;
+      // 첫번째줄 line-height: 1.5rem;에 곱하기 5
+    }
+  }
+  &__buttons {
+    padding: 1rem;
+    display: flex;
+    // 가로정렬
+    justify-content: end;
+    //  가로로 되어 있는 상태에서 어떤 방향으로 정렬? > 오른쪽
+    gap: 0.5rem;
+
+    // display: none;
+    // 카트에 담기, 더보기가 없을때 안보이게
+  }
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  // 위아래 8px(0.5rem), 좌우 16px(1rem)
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  // 폰트사이즈와 라인라이트 14px(0.875rem)
+  font-weight: bold;
+  background-color: rgb(40, 40, 87);
+  color: rgba($color: #ffffff, $alpha: 0.87);
+  // 텍스트컬러, alpha:약간의 투명도
+  border-radius: 62.4375rem;
+  // 둥굴게 구르게
+  &--type {
+    &-text {
+      background-color: unset;
+      color: rgb(40, 40, 87);
+      //  텍스트컬러
+      padding-inline: 0.5rem;
+      // 좌우가 16px로 넓어서 8px로 줄이기
+    }
+  }
+}

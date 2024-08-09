@@ -1,0 +1,32 @@
+* {
+  /* 마진, 패딩값을 넣지 않음 - 들여쓰기까지 없어져버리기 때문에 */
+  box-sizing: content-box;
+  /* 텍스트가 적히는 영역, 모든친구가 이 규칙을 따름 */
+}
+
+/* 내가 쓰고 있는 테마에 따라 화면 바뀌게 */
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: system-ui;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+main {
+  margin-inline: auto;
+  /* padding-inline: 32px;
+  max-width: 70ch; */
+  width: min(70ch, 100% - 2 * 32px);
+}
+
+img,
+svg,
+video,
+frame {
+  display: block;
+  max-width: 100%;
+}
